@@ -1,0 +1,75 @@
+#pane {
+    /*-fx-background-color: royalblue;*/
+    -fx-background-image: url("backgroundAccueil.jpg");
+    /*-fx-background-repeat: stretch;*/
+    -fx-background-size: 100% 100%;
+    -fx-background-position: center center;
+    -fx-alignment: center;
+    /*-fx-effect: dropshadow(three-pass-box, black, 30, 0.5, 0, 0);*/
+}
+#headBarPane{
+    -fx-border-radius: 70 70 0 0;
+    -fx-background-radius: 70 70 0 0;
+    -fx-background-color: #2fd36b;
+    -fx-alignment: center;
+    -fx-text-alignment: center;
+   /* -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);*/
+}
+#loginPane{
+    -fx-background-color: #ffffff;
+    /*-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 15, 0, 5, 5);*/
+    -fx-border-radius: 0 0 70 70;
+    -fx-background-radius: 0 0 70 70;
+}
+
+#userIc{
+    -fx-background-image: url("user5.png");
+    -fx-background-size: 100% 100%;
+    -fx-background-position: center center;
+    -fx-alignment: center;
+}
+#lockIc{
+    -fx-background-image: url("lock5.png");
+    -fx-background-size: 100% 100%;
+    -fx-background-position: center center;
+    -fx-alignment: center;
+}
+#informations{
+    -fx-alignment: center;
+    -fx-font-family: sans-serif;
+    -fx-padding: 5px 0px 10px 0px;
+}
+#coverPane{
+    -fx-opacity: 30%;
+    -fx-background-color: black;
+}
+#Vbox{
+    -fx-text-alignment: center;
+    -fx-alignment: center;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 20, 0, 0, 0);
+}
+#informationPane{
+    -fx-alignment: center;
+}
+#passwordFeild, #userFeild{
+    -fx-border-radius: 10 10 10 10;
+    -fx-background-radius: 10 10 10 10;
+    -fx-background-color: antiquewhite;
+    -fx-opacity: 70%;
+}
+#passwordFeild:hover, #userFeild:hover{
+    -fx-border-radius: 10 10 10 10;
+    -fx-background-radius: 10 10 10 10;
+    -fx-background-color: antiquewhite;
+    -fx-opacity: 90%;
+}
+
+#connectionButton:hover{
+    -fx-background-color: #28e76b ;
+    -fx-text-fill: #ffffff;
+}
+#connectionButton{
+    -fx-background-color: #ffffff;
+    -fx-text-fill: #28e76b;
+    -fx-cursor: hand;
+}
