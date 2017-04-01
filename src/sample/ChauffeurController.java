@@ -15,6 +15,7 @@ import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeTableColumn;
 import javafx.stage.Stage;
 import javafx.util.Callback;
+import sample.nextStage.MenuController;
 
 import javax.print.DocFlavor;
 import javax.swing.plaf.nimbus.State;
@@ -328,11 +329,23 @@ public class ChauffeurController implements Initializable{
             String sql = "update prixunitaires set accesCamion="+ pu.getAccesCam().getValue().toString() + ",suivi ="+pu.getSuivi().getValue().toString()+",immobilisation ="+pu.getImmo().getValue().toString()+",manutention ="+pu.getManutention().getValue().toString()+",transport ="+pu.getTransport().getValue().toString()+",dechargement20 ="+pu.getDech20().getValue().toString()+",dechargement40 ="+pu.getDech40().getValue().toString()+",fraisDossier ="+pu.getFraisDos().getValue().toString()+",visite20 ="+pu.getVisite20().getValue().toString()+",visite40 ="+pu.getVisite40().getValue().toString()+",visDouane20 ="+pu.getVisD20().getValue().toString()+",visDouane40 ="+pu.getVisD40().getValue().toString()+",char20 ="+pu.getCh20().getValue().toString()+",char40 ="+pu.getCh40().getValue().toString()+",mag120 ="+pu.getMag120().getValue().toString()+",mag140 ="+pu.getMag140().getValue().toString()+",mag220 ="+pu.getMag220().getValue().toString()+",mag240 ="+pu.getMag240().getValue().toString()+",tel ="+pu.getTel().getValue().toString()+",fraisExpertise ="+pu.getFraisExpertise().getValue().toString()+ "where 1" ;
             System.out.println(sql);
             System.out.println(stmt.executeUpdate(sql));
+            ResultSet set=stmt.executeQuery("select * from prixunitaires ");
 
-            String sql1="update prixunitaires set plombage ="+pu.getPlombage().getValue().toString()+",magPort ="+pu.getMagPort().getValue().toString()+",scanner ="+pu.getScanner().getValue().toString()+"where 1";
-            System.out.println(sql1);
+            set.next();
+            int traite=set.getInt("traite");
+            String sql1;
+            System.out.println(sql);
+            if(traite==0 ) {
+                String noms = set.getString("userr");
+                 sql1 = "update prixunitaires set userr='" + noms + ", " + MenuController.getUserName() + "',plombage =" + pu.getPlombage().getValue().toString() + ",magPort =" + pu.getMagPort().getValue().toString() + ",scanner =" + pu.getScanner().getValue().toString() + "where 1";
+                System.out.println(sql1);
+            }else{
+                 sql1 = "update prixunitaires set traite='"+0+"',userr='"+ MenuController.getUserName() + "',plombage =" + pu.getPlombage().getValue().toString() + ",magPort =" + pu.getMagPort().getValue().toString() + ",scanner =" + pu.getScanner().getValue().toString() + "where 1";
 
+            }
             System.out.println(stmt.executeUpdate(sql1));
+
+
         }catch (SQLException e){System.out.println("exception");}
 
     }

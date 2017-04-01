@@ -1,0 +1,82 @@
+Help&Web pro
+256
+0
+0
+0
+0
+0
+AIDE
+(C) 2017 1200AAABBCC
+
+
+
+C:\Users\Karim\AppData\Roaming\HelpAndWeb\HCRTF.EXE
+0
+0
+0
+1
+0
+-1
+1
+main^
+AIDE^65280
+1
+0
+0
+0
+640
+480
+16764057
+16777215
+Titre 1
+Normal
+<<Livre Fermé>>
+<<Livre Ouvert>>
+<<Page Aide>>
+Titre 2
+Normal
+Titre 1
+Normal
+<<Carré Rouge>>
+<<Carré Rouge>>
+0
+5
+Livre Fermé|<<BMP(C,book.png,,,,1,1)>>
+Livre Ouvert|<<BMP(C,openbook.png,,,,1,1)>>
+Page Aide|<<BMP(C,page.png,,,,1,1)>>
+Carré Rouge|<<FIG(1,0,0,0,10,10,10)>>
+Puce ronde|<<FNT(Arial,12,-,G:•)>>
+0
+0
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+0
+1
+0
+
+Quitter
+1
+1
+1
+1
+0
+13565952
+0
+
+0
+REGISTRED
+0
+
+
+
+0
+0
+0

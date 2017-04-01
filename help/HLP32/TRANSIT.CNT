@@ -1,0 +1,7 @@
+:base TRANSIT.HLP
+:title AIDE
+:index AIDE=TRANSIT.HLP
+1 Login=login
+1 Menu principale
+2 Menu principale=menu_principale
+1 Gestion des dossiers=gestion_des_dossiers_0

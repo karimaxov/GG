@@ -1,0 +1,109 @@
+Help&Web pro
+256
+4
+TRANSIT
+	Login
+	Menu principale
+		Gestion des dossiers$0
+4
+-1
+	0
+	9
+		11
+0
+3
+base de donnée.bmp
+glossaryterme.png
+table_fig.png
+0
+AIDE
+(C) 2017 1200AAABBCC
+
+
+
+C:\Users\Karim\AppData\Roaming\HelpAndWeb\HCRTF.EXE
+0
+0
+0
+1
+0
+10
+1
+main^
+AIDE^65280
+1
+0
+0
+0
+640
+480
+16764057
+16777215
+Titre 1
+Normal
+<<Livre Fermé>>
+<<Livre Ouvert>>
+<<Page Aide>>
+Titre 2
+Normal
+Titre 1
+Normal
+<<Carré Rouge>>
+<<Carré Rouge>>
+0
+5
+Livre Fermé|<<BMP(C,book.png,,,,1,1)>>
+Livre Ouvert|<<BMP(C,openbook.png,,,,1,1)>>
+Page Aide|<<BMP(C,page.png,,,,1,1)>>
+Carré Rouge|<<FIG(1,0,0,0,10,10,10)>>
+Puce ronde|<<FNT(Arial,12,-,G:•)>>
+1
+C:\Users\Karim\Desktop\login\help\TRANSIT.INI
+0
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+0
+1
+0
+
+Quitter
+1
+1
+1
+1
+0
+13565952
+0
+
+0
+REGISTRED
+0
+
+
+
+3
+Login=Login
+Menu principale=Menu principale
+Gestion des dossiers$0=Gestion des dossiers$0
+0
+6
+GLOBALENTETE
+3
+GLOBALBASDEPAGE
+4
+header
+5
+colleft
+6
+colright
+7
+footer
+8
