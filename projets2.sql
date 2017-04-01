@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 29, 2017 at 06:19 PM
+-- Generation Time: Apr 01, 2017 at 08:59 PM
 -- Server version: 5.7.14-log
 -- PHP Version: 5.6.25
 
@@ -180,6 +180,15 @@ CREATE TABLE `dossier` (
 --
 
 INSERT INTO `dossier` (`idDossier`, `idClient`, `typee`, `provenance`, `dateEntree`, `nbConteneur`) VALUES
+(1, 1, 'dstr', 'usa', '2017-12-12', 2),
+(2, 1, 'dstr', 'usa', '2017-12-12', 2),
+(3, 1, 'dstr', 'usa', '2017-12-12', 2),
+(4, 1, 'dstr', 'usa', '2017-12-12', 2),
+(6, 2, 'dstr', 'mozambiq', '2017-02-12', 2),
+(7, 3, 'ot', 'kuba', '2017-03-12', 2),
+(8, 3, 'ot', 'france', '2017-01-12', 2),
+(10, 2, 'dstr', 'ifrikia', '2017-02-12', 3),
+(11, 3, 'ot', 'kuba', '2017-03-12', 20),
 (13, 2, 'DSTR', 'Albanie', '2017-02-15', 0);
 
 -- --------------------------------------------------------
@@ -528,15 +537,17 @@ CREATE TABLE `prixunitaires` (
   `scanner` decimal(10,2) NOT NULL,
   `mag120` decimal(10,0) NOT NULL,
   `mag220` decimal(10,0) NOT NULL,
-  `mag240` decimal(10,0) NOT NULL
+  `mag240` decimal(10,0) NOT NULL,
+  `userr` varchar(200) NOT NULL,
+  `traite` int(4) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `prixunitaires`
 --
 
-INSERT INTO `prixunitaires` (`fraisDossier`, `suivi`, `manutention`, `transport`, `immobilisation`, `dechargement20`, `dechargement40`, `accesCamion`, `visite40`, `visite20`, `visDouane40`, `visDouane20`, `char40`, `char20`, `mag140`, `tel`, `fraisExpertise`, `plombage`, `magPort`, `scanner`, `mag120`, `mag220`, `mag240`) VALUES
-('1000.00', '3200.00', '2000.01', '4000.00', '1500.00', '3000.00', '1400.00', '4005.00', '1520.05', '1420.50', '4500.00', '1500.00', '800.00', '1500.00', '200.00', '500.00', '1200.00', '3000.00', '600.00', '1200.00', '0', '0', '0');
+INSERT INTO `prixunitaires` (`fraisDossier`, `suivi`, `manutention`, `transport`, `immobilisation`, `dechargement20`, `dechargement40`, `accesCamion`, `visite40`, `visite20`, `visDouane40`, `visDouane20`, `char40`, `char20`, `mag140`, `tel`, `fraisExpertise`, `plombage`, `magPort`, `scanner`, `mag120`, `mag220`, `mag240`, `userr`, `traite`) VALUES
+('1000.00', '3200.00', '2000.01', '4000.00', '1500.00', '3000.00', '1400.00', '4005.00', '1520.05', '1420.50', '4500.00', '1500.00', '800.00', '1500.00', '200.00', '500.00', '1200.00', '3000.00', '600.00', '1200.00', '0', '0', '0', 'root', 1);
 
 -- --------------------------------------------------------
 
@@ -649,7 +660,7 @@ ALTER TABLE `chauffeur`
 -- AUTO_INCREMENT for table `client`
 --
 ALTER TABLE `client`
-  MODIFY `idClient` int(32) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `idClient` int(32) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 --
 -- AUTO_INCREMENT for table `dossier`
 --
