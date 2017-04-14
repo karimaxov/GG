@@ -7,6 +7,17 @@
     -fx-alignment: center;
     /*-fx-effect: dropshadow(three-pass-box, black, 30, 0.5, 0, 0);*/
 }
+
+.ma{
+    -fx-background-image: url('usersfond.jpg');
+
+}
+
+.toggle{
+    -fx-background-image: url('back.png');
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+}
 #headBarPane{
     -fx-border-radius: 70 70 0 0;
     -fx-background-radius: 70 70 0 0;

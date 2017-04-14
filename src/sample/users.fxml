@@ -7,6 +7,7 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.UsersController">
@@ -33,36 +34,51 @@
                </children>
             </AnchorPane>
             <JFXButton fx:id="modifier" layoutX="265.0" layoutY="164.0" onAction="#modifier" style="-fx-background-color: #40D5A2;" text="Clear" textFill="WHITE" />
-            <JFXButton fx:id="ajouter" layoutX="18.0" layoutY="170.0" onAction="#ajouter" prefHeight="31.0" prefWidth="92.0" style="-fx-background-color: #40D5A2;" text="Ajouter" textFill="WHITE">
+            <JFXButton fx:id="ajouter" layoutX="5.0" layoutY="221.0" onAction="#ajouter" prefHeight="31.0" prefWidth="92.0" style="-fx-background-color: #40D5A2;" text="Ajouter" textFill="WHITE">
                <font>
                   <Font size="15.0" />
                </font>
             </JFXButton>
-            <JFXButton fx:id="supprimer" layoutX="19.0" layoutY="251.0" onAction="#supprimer" prefHeight="31.0" prefWidth="92.0" style="-fx-background-color: #40D5A2;" text="Supprimer" textFill="WHITE">
+            <JFXButton fx:id="supprimer" layoutX="216.0" layoutY="221.0" onAction="#supprimer" prefHeight="31.0" prefWidth="92.0" style="-fx-background-color: #40D5A2;" text="Supprimer" textFill="WHITE">
                <font>
                   <Font size="15.0" />
                </font>
             </JFXButton>
-            <JFXButton fx:id="ajour" layoutX="18.0" layoutY="210.0" onAction="#ajour" prefHeight="31.0" prefWidth="92.0" style="-fx-background-color: #40D5A2;" text="Modifier" textFill="WHITE">
+            <JFXButton fx:id="ajour" layoutX="110.0" layoutY="221.0" onAction="#ajour" prefHeight="31.0" prefWidth="92.0" style="-fx-background-color: #40D5A2;" text="Modifier" textFill="WHITE">
                <font>
                   <Font size="15.0" />
+               </font>
+            </JFXButton>
+            <ImageView fitHeight="41.0" fitWidth="31.0" layoutX="5.0" layoutY="51.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@user2.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="31.0" fitWidth="31.0" layoutX="5.0" layoutY="110.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@lock.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <Label layoutX="68.0" layoutY="34.0" text="Gestion des utilisateurs">
+         <font>
+            <Font name="System Bold Italic" size="22.0" />
+         </font>
+      </Label>
+      <StackPane prefHeight="96.0" prefWidth="76.0">
+         <children>
+            <ImageView fitHeight="54.0" fitWidth="43.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@back.png" />
+               </image>
+            </ImageView>
+            <JFXButton fx:id="retour" onAction="#retour" opacity="0.0" prefHeight="49.0" prefWidth="43.0" stylesheets="@styleSheet.css" textFill="WHITE">
+               <font>
+                  <Font size="25.0" />
                </font>
             </JFXButton>
          </children>
-      </AnchorPane>
-      <JFXButton fx:id="retour" layoutX="19.0" layoutY="432.0" onAction="#retour" style="-fx-background-color: #40D5A2;" text="Retour au menu" textFill="WHITE">
-         <font>
-            <Font size="25.0" />
-         </font></JFXButton>
-      <ImageView fitHeight="63.0" fitWidth="72.0" layoutX="14.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@user2.png" />
-         </image>
-      </ImageView>
-      <Label layoutX="100.0" layoutY="59.0" text="Gestion des utilisateurs">
-         <font>
-            <Font name="System Bold Italic" size="21.0" />
-         </font>
-      </Label>
+      </StackPane>
    </children>
 </AnchorPane>

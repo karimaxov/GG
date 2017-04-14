@@ -11,6 +11,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Tooltip;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeTableColumn;
 import javafx.stage.Stage;
@@ -27,6 +28,10 @@ public class UsersController implements Initializable {
     private JFXTextField passf;
     @FXML
             private JFXButton supprimer;
+    @FXML
+    private JFXButton ajouter;
+    @FXML
+    private JFXButton modifier;
     ObservableList<Users> jeuDessai;
     Connection conn = null;
     Statement stmt =null;
@@ -46,7 +51,7 @@ public class UsersController implements Initializable {
         ObservableList<Users> userData = FXCollections.observableArrayList();
 
         try
-        {String sql="select username,password from login where super='0'";
+        {String sql="select username,password from login where 1";
             ResultSet res;
 
             res=stmt.executeQuery(sql);
@@ -82,8 +87,9 @@ private JFXButton ajour;
                 int i;
                 if((i=table.getSelectionModel().getSelectedIndex())>=0 && !passf.getText().isEmpty() && !userf.getText().isEmpty())
                 {
-
-                    String sql="update login set username='"+userf.getText().toString()+"',password='"+passf.getText().toString()+"' where username='"+jeuDessai.get(i).username.get()+"'";
+                    String root="";
+                    if(!userf.getText().equals("root")){root="root";userf.setText("root");}else{root=userf.getText().toString();}
+                    String sql="update login set username='"+root+"',password='"+passf.getText().toString()+"' where username='"+jeuDessai.get(i).username.get()+"'";
                     try {
                         jeuDessai.get(i).username.set(userf.getText().toString());
                         jeuDessai.get(i).pass.set(passf.getText().toString());
@@ -125,6 +131,9 @@ private JFXButton ajour;
                         s = conn.createStatement();
                         s.executeUpdate(sql2);
                         jeuDessai.add(new Users(userf.getText().toString(), passf.getText().toString()));
+                        table.getSelectionModel().select(null);
+                        passf.clear();
+                        userf.clear();
                     }
 
 
@@ -136,6 +145,7 @@ private JFXButton ajour;
 
     @FXML
     void modifier(ActionEvent event) {
+        table.getSelectionModel().select(null);
         passf.clear();
         userf.clear();
 
@@ -151,6 +161,7 @@ private JFXButton ajour;
 
     @FXML
     void retour(ActionEvent event) {
+
         current.close();
         menu.show();
     }
@@ -172,6 +183,8 @@ private JFXButton ajour;
                     if(jeuDessai.isEmpty())supprimer.setDisable(true);
                     userf.clear();
                     passf.clear();
+                    table.getSelectionModel().select(null);
+
                 } catch (SQLException e) {
                     e.printStackTrace();
                 }
@@ -221,6 +234,12 @@ private JFXButton ajour;
                 userf.setText(newValue.getValue().username.get());
             }
         });
+
+        supprimer.setTooltip(new Tooltip("Selectionnez une ligne a partir de la table a droite puis cliquez sur moi pour la supprimer"));
+        ajour.setTooltip(new Tooltip("selectionnez une ligne du tableau puis modifier le nom d'utilisateur et le mot de passe a partir des entrers de texte"));
+        modifier.setTooltip(new Tooltip("vider les champs de texte pour entrer un nouveau utilisateur"));
+        ajouter.setTooltip(new Tooltip("entrer un nom d'utilisateur et accorder lui un mot de passe puis cliquer sur moi"));
+
 
     }
 }

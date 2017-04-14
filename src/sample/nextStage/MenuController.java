@@ -165,7 +165,7 @@ public class MenuController implements Initializable {
     {
         return userName;
     }
-    
+
     public void DisableAdminButtons(boolean _disable)
     {
         menuGestUserButton.setDisable(_disable);
@@ -187,60 +187,69 @@ public class MenuController implements Initializable {
         System.out.println("init");
         DisableAdminButtons(!isUserAdmin());
         menuTitle.setText("Bienvenue " + getUserName());
-        try {
-            Class.forName("com.mysql.jdbc.Driver");
-            conn = (Connection) DriverManager.getConnection(DB_URL, USER, PASS);
-            stmt = (Statement) conn.createStatement();
 
-
-            Class.forName(JDBC_DRIVER);
-            conn = DriverManager.getConnection(DB_URL, USER, PASS);
-
-            String sql = "select * from prixunitaires ";
-            ResultSet res;
-            stmt = conn.createStatement();
-            res = stmt.executeQuery(sql);
-            res.next();
-            int traite=res.getInt("traite");
-            System.out.println(traite);
-            if(traite==0 && isAdmin){
-                 noms=res.getString("userr");
-                System.out.println(noms);
-                new MyThread().start();
-               // n.showInformation();
-                System.out.println("notification");
-                stmt.executeUpdate("update prixunitaires set traite='"+1+"'where 1");
-                System.out.println("notification2");
-
-            }
-            System.out.println("pas notification");
-
-        } catch (SQLException e) {
-            System.out.println("sqlexception");
-        } catch (ClassNotFoundException e) {
-            System.out.println("classe not found");
-
-            e.printStackTrace();
-        }
-
+        new MyThread().start();
     }
 
 
     class MyThread extends Thread{
         @Override
         public void run() {
-           Notifications n=Notifications.create()
-                    .graphic(null)
-                    .position(Pos.BOTTOM_RIGHT)
-                    .title("Modification detecté")
-                    .text("Des modification dans les prix unitaires ont été effectué par : \n  "+noms)
-                    .hideAfter(Duration.seconds(5));
-            javafx.application.Platform.runLater(new Runnable() {
-                @Override
-                public void run() {
-                    n.showInformation();
+
+
+            try {
+                Class.forName("com.mysql.jdbc.Driver");
+                conn = (Connection) DriverManager.getConnection(DB_URL, USER, PASS);
+                stmt = (Statement) conn.createStatement();
+
+
+                Class.forName(JDBC_DRIVER);
+                conn = DriverManager.getConnection(DB_URL, USER, PASS);
+
+                String sql = "select * from prixunitaires ";
+                ResultSet res;
+                stmt = conn.createStatement();
+                boolean continu=true;
+                while(continu) {
+
+                    res = stmt.executeQuery(sql);
+                    res.next();
+                    int traite = res.getInt("traite");
+                    System.out.println(traite);
+                    if (traite == 0 && isAdmin) {
+                        noms = res.getString("userr");
+                        System.out.println(noms);
+
+
+                        Notifications n = Notifications.create()
+                                .graphic(null)
+                                .position(Pos.BOTTOM_RIGHT)
+                                .title("Modification detecté")
+                                .text("Des modification dans les prix unitaires ont été effectué par : \n  " + noms)
+                                .hideAfter(Duration.seconds(5));
+                        javafx.application.Platform.runLater(new Runnable() {
+                            @Override
+                            public void run() {
+                                n.showInformation();
+                            }
+                        });
+                        // n.showInformation();
+                        System.out.println("notification");
+                        stmt.executeUpdate("update prixunitaires set traite='" + 1 + "'where 1");
+                        System.out.println("notification2");
+
+                    }
+                    System.out.println("pas notification");
                 }
-            });
+            } catch (SQLException e) {
+                System.out.println("sqlexception");
+            } catch (ClassNotFoundException e) {
+                System.out.println("classe not found");
+
+                e.printStackTrace();
+            }
+
+
 
         }
     }

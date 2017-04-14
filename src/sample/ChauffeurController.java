@@ -11,6 +11,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Tooltip;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeTableColumn;
 import javafx.stage.Stage;
@@ -181,6 +182,10 @@ public class ChauffeurController implements Initializable{
     @FXML
     private JFXButton clear;
 
+    @FXML
+    private JFXButton ajouterdouane;
+    @FXML
+    private JFXButton supprimerdouane;
 
     static Stage menu,current;
     static public void getStage(Stage menuu,Stage currentt)
@@ -632,6 +637,15 @@ public class ChauffeurController implements Initializable{
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
+
+        ajouterdouane.setTooltip(new Tooltip("Entrer le nom et le badge du declarant puis cliquer sur moi"));
+        supprimerdouane.setTooltip(new Tooltip("Selectionner une ligne de la table puis cliquer sur moi pour supprimer ce declarant"));
+
+        ajour.setTooltip(new Tooltip("Selectioner une ligne de la table est modifier le numero du chauffeur ou bien supprimer/ajouter des camion (a gauche) puis cliquer sur moi"));
+        ajouter.setTooltip(new Tooltip("Entrer un nouveau chauffeur avec ces camions puis cliquer sur moi "));
+        ajouterCamion.setTooltip(new Tooltip("Ajouter le matricule du camion"));
+        ajouterCamion.setTooltip(new Tooltip("selectionner un camion pour le supprimer"));
+        clear.setTooltip(new Tooltip("vider tout les champs pour pouvoir entrer un nouveau chauffeur"));
 
     }
 

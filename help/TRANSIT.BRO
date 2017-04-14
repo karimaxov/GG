@@ -7,7 +7,6 @@ Gestion des dossiers=6
 Gestion des dossiers$0=7
 [BASE.MAPID]
 MAPID=8
-[notesbas.-1]
 [notesbas.2]
 [notesbas.1]
 [BROWSE]
@@ -30,5 +29,6 @@ o11=_AUTO-NUM-LEVEL_
 o12=_PDF_BACKGROUND_
 o13=_PDF_THUMBNAIL_SHOW_
 [notesbas.9]
-[notesbas.11]
 [notesbas.0]
+[notesbas.-1]
+[notesbas.11]

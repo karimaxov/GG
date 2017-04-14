@@ -13,6 +13,7 @@
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" stylesheets="@StyleChauffeur.css" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ChauffeurController">
@@ -26,67 +27,57 @@
                         <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" stylesheets="@StyleChauffeur.css">
                            <children>
                               <JFXTreeTableView fx:id="tableChauffeur" layoutX="627.0" layoutY="53.0" prefHeight="505.0" prefWidth="332.0" />
-                              <Label layoutX="54.0" layoutY="44.0" prefHeight="33.0" prefWidth="121.0" text="Nom Chauffeur">
+                              <Label layoutX="54.0" layoutY="44.0" prefHeight="33.0" prefWidth="121.0">
                                  <font>
                                     <Font size="17.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="51.0" layoutY="140.0" prefHeight="33.0" prefWidth="154.0" text="Numero telephone">
+                              <Label layoutX="51.0" layoutY="140.0" prefHeight="33.0" prefWidth="154.0">
                                  <font>
                                     <Font size="17.0" />
                                  </font>
                               </Label>
-                              <JFXTreeTableView fx:id="tableCamion" layoutX="37.0" layoutY="324.0" prefHeight="230.0" prefWidth="248.0" />
-                              <JFXTextField fx:id="nomChauffeur" layoutX="48.0" layoutY="80.0" prefHeight="25.0" prefWidth="186.0" />
-                              <JFXTextField fx:id="numChauffeur" layoutX="48.0" layoutY="176.0" prefHeight="25.0" prefWidth="186.0" />
-                              <JFXButton fx:id="ajouterCamion" layoutX="144.0" layoutY="294.0" onAction="#ajouterCamion" text="Ajouter" textFill="WHITE" />
-                              <JFXButton fx:id="supprimerCamion" layoutX="213.0" layoutY="293.0" onAction="#supprimerCamion" text="Supprimer" textFill="WHITE" />
-                              <JFXTextField fx:id="matricule" layoutX="145.0" layoutY="257.0" />
-                              <JFXButton fx:id="ajouter" layoutX="373.0" layoutY="268.0" onAction="#ajouter" prefHeight="48.0" prefWidth="139.0" text="ajouter" textFill="WHITE">
+                              <JFXTreeTableView fx:id="tableCamion" layoutX="37.0" layoutY="321.0" prefHeight="230.0" prefWidth="248.0" />
+                              <JFXTextField fx:id="nomChauffeur" labelFloat="true" layoutX="367.0" layoutY="107.0" prefHeight="25.0" prefWidth="186.0" promptText="Nom Chauffeur" />
+                              <JFXTextField fx:id="numChauffeur" labelFloat="true" layoutX="367.0" layoutY="190.0" prefHeight="25.0" prefWidth="186.0" promptText="Numero telephone" />
+                              <JFXButton fx:id="ajouterCamion" layoutX="143.0" layoutY="268.0" onAction="#ajouterCamion" text="Ajouter" textFill="WHITE" />
+                              <JFXButton fx:id="supprimerCamion" layoutX="212.0" layoutY="267.0" onAction="#supprimerCamion" text="Supprimer" textFill="WHITE" />
+                              <JFXTextField fx:id="matricule" labelFloat="true" layoutX="144.0" layoutY="231.0" promptText="Camions" />
+                              <JFXButton fx:id="ajouter" layoutX="391.0" layoutY="324.0" onAction="#ajouter" prefHeight="48.0" prefWidth="139.0" style="-fx-border-radius: 20;" text="ajouter" textFill="WHITE">
                                  <font>
                                     <Font size="22.0" />
                                  </font>
                               </JFXButton>
-                              <JFXButton fx:id="ajour" layoutX="373.0" layoutY="338.0" onAction="#ajour" prefHeight="48.0" prefWidth="139.0" text="modifier" textFill="WHITE">
+                              <JFXButton fx:id="ajour" layoutX="391.0" layoutY="394.0" onAction="#ajour" prefHeight="48.0" prefWidth="139.0" style="-fx-border-radius: 20;" text="modifier" textFill="WHITE">
                                  <font>
                                     <Font size="22.0" />
                                  </font>
                               </JFXButton>
-                              <JFXButton fx:id="supprimer" layoutX="372.0" layoutY="409.0" onAction="#supprimer" prefHeight="48.0" prefWidth="139.0" text="supprimer" textFill="WHITE">
+                              <JFXButton fx:id="supprimer" layoutX="390.0" layoutY="465.0" onAction="#supprimer" prefHeight="48.0" prefWidth="139.0" style="-fx-border-radius: 20;" text="supprimer" textFill="WHITE">
                                  <font>
                                     <Font size="22.0" />
                                  </font>
                               </JFXButton>
-                              <JFXButton fx:id="clear" layoutX="230.0" layoutY="559.0" onAction="#clear" prefHeight="12.0" prefWidth="66.0" text="clear" textFill="WHITE">
+                              <JFXButton fx:id="clear" layoutX="511.0" layoutY="237.0" onAction="#clear" prefHeight="19.0" prefWidth="39.0" text="clear" textFill="WHITE">
                                  <font>
-                                    <Font size="18.0" />
+                                    <Font size="11.0" />
                                  </font>
                               </JFXButton>
-                              <Label layoutX="53.0" layoutY="236.0" text="Camions">
+                              <Label layoutX="143.0" layoutY="236.0">
                                  <font>
                                     <Font size="17.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="254.0" layoutY="12.0" text="Gestion des chauffeurs">
+                              <Label layoutX="20.0" layoutY="41.0" text="Gestion des chauffeurs">
                                  <font>
-                                    <Font size="35.0" />
+                                    <Font size="28.0" />
                                  </font>
                               </Label>
-                              <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="298.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fitHeight="109.0" fitWidth="113.0" layoutX="54.0" layoutY="96.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@track1.png" />
                                  </image>
                               </ImageView>
-                              <ImageView fitHeight="150.0" fitWidth="115.0" layoutX="466.0" layoutY="98.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@track2.png" />
-                                 </image>
-                              </ImageView>
-                              <JFXButton fx:id="retour" layoutX="331.0" layoutY="506.0" onAction="#retour" text="Retour au menu" textFill="WHITE">
-                                 <font>
-                                    <Font size="25.0" />
-                                 </font>
-                              </JFXButton>
                            </children>
                         </AnchorPane>
                      </children></AnchorPane>
@@ -101,7 +92,7 @@
                               <TreeTableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                            </columnResizePolicy>
                         </JFXTreeTableView>
-                        <JFXButton fx:id="retour1" layoutX="314.0" layoutY="466.0" onAction="#retour1" text="Retour au menu" textFill="WHITE">
+                        <JFXButton fx:id="retour1" layoutX="314.0" layoutY="466.0" onAction="#retour1" opacity="0.0" text="Retour au menu" textFill="WHITE">
                            <font>
                               <Font size="25.0" />
                            </font>
@@ -170,12 +161,12 @@
                               <JFXTextField fx:id="tel" labelFloat="true" promptText="Tel" GridPane.columnIndex="1" GridPane.rowIndex="8" />
                               <JFXTextField fx:id="scanner" labelFloat="true" promptText="Scanner" GridPane.rowIndex="10" />
                               <JFXTextField fx:id="magPort" labelFloat="true" promptText="Magasinage Portuaire" GridPane.columnIndex="1" GridPane.rowIndex="10" />
-                              <JFXTextField fx:id="plombage" labelFloat="true" promptText="Plombage" GridPane.rowIndex="11" />
+                              <JFXTextField fx:id="plombage" labelFloat="true" promptText="Plombage" GridPane.columnIndex="1" GridPane.rowIndex="11" />
                            </children>
                         </GridPane>
                         <Label alignment="CENTER" layoutX="296.0" layoutY="16.0" prefHeight="25.0" prefWidth="146.0" text="Configuration Des Prix" />
-                        <JFXButton layoutX="629.0" layoutY="504.0" onAction="#retour2" prefHeight="58.0" prefWidth="119.0" style="-fx-background-color: #009486;" text="Retour" />
-                        <JFXButton layoutX="478.0" layoutY="503.0" onAction="#appliquer" prefHeight="58.0" prefWidth="121.0" style="-fx-background-color: #009486;" text="Appliquer" />
+                        <JFXButton layoutX="629.0" layoutY="504.0" onAction="#retour2" opacity="0.0" prefHeight="58.0" prefWidth="119.0" style="-fx-background-color: #009486;" text="Retour" />
+                        <JFXButton layoutX="150.0" layoutY="504.0" onAction="#appliquer" prefHeight="58.0" prefWidth="219.0" style="-fx-background-color: #009486;" text="Appliquer" />
                      </children>
                   </AnchorPane>
                </content>
@@ -187,5 +178,19 @@
             <Font size="19.0" />
          </font>
       </Label>
+      <StackPane layoutX="5.0" layoutY="-6.0" prefHeight="31.0" prefWidth="57.0">
+         <children>
+            <ImageView fitHeight="39.0" fitWidth="43.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@back.png" />
+               </image>
+            </ImageView>
+            <JFXButton fx:id="retour" onAction="#retour" opacity="0.0" prefHeight="45.0" prefWidth="37.0" textFill="WHITE">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </StackPane>
    </children>
 </AnchorPane>
