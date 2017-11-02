@@ -1,0 +1,30 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="login:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/login_jar</output-path>
+    <root id="archive" name="login.jar">
+      <element id="module-output" name="login" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/IMPORTS/poi-3.15/poi-3.15.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/IMPORTS/poi-3.15/poi-ooxml-3.15.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/IMPORTS/poi-3.15/poi-examples-3.15.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/IMPORTS/poi-3.15/poi-excelant-3.15.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/IMPORTS/poi-3.15/poi-scratchpad-3.15.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/IMPORTS/poi-3.15/poi-ooxml-schemas-3.15.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/IMPORTS/commons-lang3-3.5/commons-lang3-3.5-tests.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/IMPORTS/commons-lang3-3.5/commons-lang3-3.5.jar" path-in-jar="/" />
+      <element id="dir-copy" path="$PROJECT_DIR$/IMPORTS/commons-lang3-3.5/apidocs/org/apache/commons/lang3" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/IMPORTS/poi-3.15/lib/commons-codec-1.10.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/IMPORTS/poi-3.15/lib/commons-collections4-4.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/IMPORTS/poi-3.15/lib/commons-logging-1.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/IMPORTS/poi-3.15/lib/junit-4.12.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/IMPORTS/poi-3.15/lib/log4j-1.2.17.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/IMPORTS/controlsfx-8.40.12.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/IMPORTS/commons-lang3-3.5/commons-lang3-3.5-javadoc.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/IMPORTS/commons-lang3-3.5/commons-lang3-3.5-sources.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/IMPORTS/commons-lang3-3.5/commons-lang3-3.5-test-sources.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/IMPORTS/poi-3.15/ooxml-lib/curvesapi-1.04.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/IMPORTS/poi-3.15/ooxml-lib/xmlbeans-2.6.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/IMPORTS/jfoenix.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/IMPORTS/mysql-connector-java-5.1.34-bin.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="login" default="all">
+  
+  
+  <property file="login.properties"/>
+  <!-- Uncomment the following property if no tests compilation is needed -->
+  <!-- 
+  <property name="skip.tests" value="true"/>
+   -->
+  
+  <!-- Compiler options -->
+  
+  <property name="compiler.debug" value="on"/>
+  <property name="compiler.generate.no.warnings" value="off"/>
+  <property name="compiler.args" value=""/>
+  <property name="compiler.max.memory" value="700m"/>
+  <patternset id="ignored.files">
+    <exclude name="**/*.hprof/**"/>
+    <exclude name="**/*.pyc/**"/>
+    <exclude name="**/*.pyo/**"/>
+    <exclude name="**/*.rbc/**"/>
+    <exclude name="**/*.yarb/**"/>
+    <exclude name="**/*~/**"/>
+    <exclude name="**/.DS_Store/**"/>
+    <exclude name="**/.git/**"/>
+    <exclude name="**/.hg/**"/>
+    <exclude name="**/.svn/**"/>
+    <exclude name="**/CVS/**"/>
+    <exclude name="**/__pycache__/**"/>
+    <exclude name="**/_svn/**"/>
+    <exclude name="**/vssver.scc/**"/>
+    <exclude name="**/vssver2.scc/**"/>
+  </patternset>
+  <patternset id="library.patterns">
+    <include name="*.war"/>
+    <include name="*.swc"/>
+    <include name="*.zip"/>
+    <include name="*.egg"/>
+    <include name="*.ane"/>
+    <include name="*.jar"/>
+    <include name="*.ear"/>
+  </patternset>
+  <patternset id="compiler.resources">
+    <exclude name="**/?*.java"/>
+    <exclude name="**/?*.form"/>
+    <exclude name="**/?*.class"/>
+    <exclude name="**/?*.groovy"/>
+    <exclude name="**/?*.scala"/>
+    <exclude name="**/?*.flex"/>
+    <exclude name="**/?*.kt"/>
+    <exclude name="**/?*.clj"/>
+  </patternset>
+  
+  <!-- JDK definitions -->
+  
+  <property name="jdk.bin.1.8" value="${jdk.home.1.8}/bin"/>
+  <path id="jdk.classpath.1.8">
+    <fileset dir="${jdk.home.1.8}">
+      <include name="jre/lib/charsets.jar"/>
+      <include name="jre/lib/deploy.jar"/>
+      <include name="jre/lib/ext/access-bridge-64.jar"/>
+      <include name="jre/lib/ext/cldrdata.jar"/>
+      <include name="jre/lib/ext/dnsns.jar"/>
+      <include name="jre/lib/ext/jaccess.jar"/>
+      <include name="jre/lib/ext/jfxrt.jar"/>
+      <include name="jre/lib/ext/localedata.jar"/>
+      <include name="jre/lib/ext/nashorn.jar"/>
+      <include name="jre/lib/ext/sunec.jar"/>
+      <include name="jre/lib/ext/sunjce_provider.jar"/>
+      <include name="jre/lib/ext/sunmscapi.jar"/>
+      <include name="jre/lib/ext/sunpkcs11.jar"/>
+      <include name="jre/lib/ext/zipfs.jar"/>
+      <include name="jre/lib/javaws.jar"/>
+      <include name="jre/lib/jce.jar"/>
+      <include name="jre/lib/jfr.jar"/>
+      <include name="jre/lib/jfxswt.jar"/>
+      <include name="jre/lib/jsse.jar"/>
+      <include name="jre/lib/management-agent.jar"/>
+      <include name="jre/lib/plugin.jar"/>
+      <include name="jre/lib/resources.jar"/>
+      <include name="jre/lib/rt.jar"/>
+    </fileset>
+  </path>
+  
+  <property name="project.jdk.home" value="${jdk.home.1.8}"/>
+  <property name="project.jdk.bin" value="${jdk.bin.1.8}"/>
+  <property name="project.jdk.classpath" value="jdk.classpath.1.8"/>
+  
+  
+  <!-- Project Libraries -->
+  
+  <path id="library.commons-lang3-3.5-javadoc.classpath">
+    <pathelement location="${basedir}/IMPORTS/commons-lang3-3.5/apidocs/org/apache/commons/lang3"/>
+    <pathelement location="${basedir}/IMPORTS/commons-lang3-3.5/commons-lang3-3.5-tests.jar"/>
+    <pathelement location="${basedir}/IMPORTS/commons-lang3-3.5/commons-lang3-3.5.jar"/>
+    <pathelement location="${basedir}/IMPORTS/poi-3.15/lib/commons-codec-1.10.jar"/>
+    <pathelement location="${basedir}/IMPORTS/poi-3.15/lib/commons-collections4-4.1.jar"/>
+    <pathelement location="${basedir}/IMPORTS/poi-3.15/lib/commons-logging-1.2.jar"/>
+    <pathelement location="${basedir}/IMPORTS/poi-3.15/lib/junit-4.12.jar"/>
+    <pathelement location="${basedir}/IMPORTS/poi-3.15/lib/log4j-1.2.17.jar"/>
+  </path>
+  
+  <path id="library.commons-lang3-3.classpath">
+    <fileset dir="${basedir}/IMPORTS/commons-lang3-3.5">
+      <patternset refid="library.patterns"/>
+    </fileset>
+  </path>
+  
+  <path id="library.controlsfx-8.40.12.classpath">
+    <pathelement location="${basedir}/IMPORTS/controlsfx-8.40.12.jar"/>
+  </path>
+  
+  <path id="library.jfoenix.classpath">
+    <pathelement location="${basedir}/IMPORTS/jfoenix.jar"/>
+  </path>
+  
+  <path id="library.mysql-connector-java-5.1.34-bin.classpath">
+    <pathelement location="${basedir}/IMPORTS/mysql-connector-java-5.1.34-bin.jar"/>
+  </path>
+  
+  <path id="library.poi-3.15.classpath">
+    <pathelement location="${basedir}/IMPORTS/poi-3.15/ooxml-lib/curvesapi-1.04.jar"/>
+    <pathelement location="${basedir}/IMPORTS/poi-3.15/ooxml-lib/xmlbeans-2.6.0.jar"/>
+    <pathelement location="${basedir}/IMPORTS/poi-3.15/poi-3.15.jar"/>
+    <pathelement location="${basedir}/IMPORTS/poi-3.15/poi-examples-3.15.jar"/>
+    <pathelement location="${basedir}/IMPORTS/poi-3.15/poi-excelant-3.15.jar"/>
+    <pathelement location="${basedir}/IMPORTS/poi-3.15/poi-ooxml-3.15.jar"/>
+    <pathelement location="${basedir}/IMPORTS/poi-3.15/poi-ooxml-schemas-3.15.jar"/>
+    <pathelement location="${basedir}/IMPORTS/poi-3.15/poi-scratchpad-3.15.jar"/>
+  </path>
+  
+  <path id="library.poi-31.classpath">
+    <fileset dir="${basedir}/IMPORTS/poi-3.15">
+      <patternset refid="library.patterns"/>
+    </fileset>
+  </path>
+  <!-- Register Custom Compiler Taskdefs -->
+  <property name="javac2.home" value="${idea.home}/lib"/>
+  <path id="javac2.classpath">
+    <pathelement location="${javac2.home}/javac2.jar"/>
+    <pathelement location="${javac2.home}/jdom.jar"/>
+    <pathelement location="${javac2.home}/asm-all.jar"/>
+    <pathelement location="${javac2.home}/jgoodies-forms.jar"/>
+  </path>
+  <target name="register.custom.compilers">
+    <taskdef name="javac2" classname="com.intellij.ant.Javac2" classpathref="javac2.classpath"/>
+    <taskdef name="instrumentIdeaExtensions" classname="com.intellij.ant.InstrumentIdeaExtensions" classpathref="javac2.classpath"/>
+  </target>
+  
+  <!-- Modules -->
+  
+  <import file="${basedir}/module_login.xml"/>
+  
+  <target name="init" description="Build initialization">
+    <!-- Perform any build initialization in this target -->
+  </target>
+  
+  <target name="clean" depends="clean.module.login" description="cleanup all"/>
+  
+  <target name="build.modules" depends="init, clean, compile.module.login" description="build all modules"/>
+  
+  <target name="init.artifacts">
+    <property name="artifacts.temp.dir" value="${basedir}/__artifacts_temp"/>
+    <property name="artifact.output.login:jar" value="${basedir}/out/artifacts/login_jar"/>
+    <mkdir dir="${artifacts.temp.dir}"/>
+    <property name="temp.jar.path.login.jar" value="${artifacts.temp.dir}/login.jar"/>
+  </target>
+  
+  <target name="artifact.login:jar" depends="init.artifacts, compile.module.login" description="Build &#39;login:jar&#39; artifact">
+    <property name="artifact.temp.output.login:jar" value="${artifacts.temp.dir}/login_jar"/>
+    <mkdir dir="${artifact.temp.output.login:jar}"/>
+    <jar destfile="${temp.jar.path.login.jar}" duplicate="preserve" filesetmanifest="mergewithoutmain">
+      <zipfileset dir="${login.output.dir}"/>
+      <zipfileset src="${basedir}/IMPORTS/poi-3.15/poi-3.15.jar"/>
+      <zipfileset src="${basedir}/IMPORTS/poi-3.15/poi-ooxml-3.15.jar"/>
+      <zipfileset src="${basedir}/IMPORTS/poi-3.15/poi-examples-3.15.jar"/>
+      <zipfileset src="${basedir}/IMPORTS/poi-3.15/poi-excelant-3.15.jar"/>
+      <zipfileset src="${basedir}/IMPORTS/poi-3.15/poi-scratchpad-3.15.jar"/>
+      <zipfileset src="${basedir}/IMPORTS/poi-3.15/poi-ooxml-schemas-3.15.jar"/>
+      <zipfileset src="${basedir}/IMPORTS/commons-lang3-3.5/commons-lang3-3.5-tests.jar"/>
+      <zipfileset src="${basedir}/IMPORTS/commons-lang3-3.5/commons-lang3-3.5.jar"/>
+      <zipfileset dir="${basedir}/IMPORTS/commons-lang3-3.5/apidocs/org/apache/commons/lang3"/>
+      <zipfileset src="${basedir}/IMPORTS/poi-3.15/lib/commons-codec-1.10.jar"/>
+      <zipfileset src="${basedir}/IMPORTS/poi-3.15/lib/commons-collections4-4.1.jar"/>
+      <zipfileset src="${basedir}/IMPORTS/poi-3.15/lib/commons-logging-1.2.jar"/>
+      <zipfileset src="${basedir}/IMPORTS/poi-3.15/lib/junit-4.12.jar"/>
+      <zipfileset src="${basedir}/IMPORTS/poi-3.15/lib/log4j-1.2.17.jar"/>
+      <zipfileset src="${basedir}/IMPORTS/controlsfx-8.40.12.jar"/>
+      <zipfileset src="${basedir}/IMPORTS/commons-lang3-3.5/commons-lang3-3.5-javadoc.jar"/>
+      <zipfileset src="${basedir}/IMPORTS/commons-lang3-3.5/commons-lang3-3.5-sources.jar"/>
+      <zipfileset src="${basedir}/IMPORTS/commons-lang3-3.5/commons-lang3-3.5-test-sources.jar"/>
+      <zipfileset src="${basedir}/IMPORTS/poi-3.15/ooxml-lib/curvesapi-1.04.jar"/>
+      <zipfileset src="${basedir}/IMPORTS/poi-3.15/ooxml-lib/xmlbeans-2.6.0.jar"/>
+      <zipfileset src="${basedir}/IMPORTS/jfoenix.jar"/>
+      <zipfileset src="${basedir}/IMPORTS/mysql-connector-java-5.1.34-bin.jar"/>
+    </jar>
+    <copy file="${temp.jar.path.login.jar}" tofile="${artifact.temp.output.login:jar}/login.jar"/>
+  </target>
+  
+  <target name="build.all.artifacts" depends="artifact.login:jar" description="Build all artifacts">
+    <mkdir dir="${artifact.output.login:jar}"/>
+    <copy todir="${artifact.output.login:jar}">
+      <fileset dir="${artifact.temp.output.login:jar}"/>
+    </copy>
+    
+    <!-- Delete temporary files -->
+    <delete dir="${artifacts.temp.dir}"/>
+  </target>
+  
+  <target name="all" depends="build.modules, build.all.artifacts" description="build all"/>
+</project>

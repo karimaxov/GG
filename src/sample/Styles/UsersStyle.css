@@ -1,0 +1,12 @@
+.tree-table-view:focused .tree-table-row-cell:selected .tree-table-cell{
+    -fx-background-color:  #053968;
+}
+.tree-table-view .column-header ,
+.tree-table-view .column-header-background,
+.tree-table-view .column-header-background .filler{
+    -fx-background-color:TRANSPARENT;
+}
+
+.button{
+    -fx-background-color: #053968;
+}

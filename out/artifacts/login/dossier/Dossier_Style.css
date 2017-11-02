@@ -1,0 +1,78 @@
+.dossierButton{
+	-fx-background-color: #053968;
+}
+#icnAdd{
+    
+    -fx-border-radius: 50 50 50 50;
+    -fx-background-radius: 50 50 50 50;}
+
+
+#AnchorPane{-fx-background-image: url("res/habib.jpg");-fx-background-size: 100% 100%;}
+#infgen1{
+    -fx-border-radius: 70 70 0 0;
+    -fx-background-radius: 70 70 0 0;
+    -fx-background-color:  #053968;/*40d5a2*/
+    
+    -fx-alignment: center;
+    -fx-text-alignment: center;
+   /*-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);*/
+}
+#infgen2{
+    -fx-background-color: #ffffff;
+    /*-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 15, 0, 5, 5);*/
+    -fx-border-radius: 0 0 40 40;
+    -fx-background-radius: 0 0 40 40;
+}
+#cli1{
+    -fx-border-radius: 70 70 0 0;
+    -fx-background-radius: 70 70 0 0;
+    -fx-background-color:  #053968;/*#4059a9;*/
+    
+    -fx-alignment: center;
+    -fx-text-alignment: center;
+   /*-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);*/
+}
+#cli2{
+   -fx-background-color: #ffffff;
+    /*-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 15, 0, 5, 5);*/
+    -fx-border-radius: 0 0 40 40;
+    -fx-background-radius: 0 0 40 40;
+}
+#cont1{
+    -fx-border-radius: 70 70 0 0;
+    -fx-background-radius: 70 70 0 0;
+    -fx-background-color:  #053968;/*#4059a9;*/
+    
+    -fx-alignment: center;
+    -fx-text-alignment: center;
+   /*-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);*/
+}
+#cont2{
+    -fx-background-color: #ffffff;
+    /*-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 15, 0, 5, 5);*/
+    -fx-border-radius: 0 0 40 40;
+    -fx-background-radius: 0 0 40 40;
+}
+#addCli_{-fx-background-image: url("res/Add-User-Male.png");-fx-background-size: 100% 100%;}
+#addCont_{-fx-background-image: url("res/Add-Rule.png");-fx-background-size: 100% 100%;}
+#suppCont_{-fx-background-image: url("res/Trash.png");-fx-background-size: 100% 100%;}
+
+
+#Green {
+    -fx-background-color: limegreen;
+}
+#Red {
+    -fx-background-color: red;
+}
+#contTable{
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+#contTableRed :selected{
+    -fx-background-color: indianred;
+}
+#contTableGreen :selected{
+    -fx-background-color: limegreen;
+}
+

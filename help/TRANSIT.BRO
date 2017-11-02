@@ -28,7 +28,7 @@ o10=_FIRST-CHAPTER_
 o11=_AUTO-NUM-LEVEL_
 o12=_PDF_BACKGROUND_
 o13=_PDF_THUMBNAIL_SHOW_
-[notesbas.9]
 [notesbas.0]
 [notesbas.-1]
 [notesbas.11]
+[notesbas.9]

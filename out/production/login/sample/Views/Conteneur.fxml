@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="310.0" prefWidth="410.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.ConteneurController">
+   <children>
+      <Pane prefHeight="310.0" prefWidth="410.0">
+         <children>
+            <VBox alignment="CENTER_LEFT" layoutX="60.0" layoutY="35.0" prefHeight="235.0" prefWidth="291.0" spacing="20.0">
+               <children>
+                  <JFXTextField fx:id="numCont" focusColor="#053968" labelFloat="true" promptText="N° du Conteneur*" />
+                  <JFXTextField fx:id="marchandise" focusColor="#053968" labelFloat="true" layoutX="10.0" layoutY="10.0" promptText="Marchandise*" />
+                  <JFXTextField fx:id="numPlomb" focusColor="#053968" labelFloat="true" layoutX="10.0" layoutY="10.0" promptText="N° plomb*" />
+                  <HBox prefHeight="40.0" prefWidth="291.0" spacing="10.0">
+                     <children>
+                        <JFXComboBox fx:id="comboChauff" focusColor="#053968" prefWidth="150.0" promptText="Chauffeur d'entrée" />
+                        <JFXComboBox fx:id="comboCam" focusColor="#053968" prefWidth="150.0" promptText="Camion d'entrée " />
+                     </children>
+                  </HBox>
+                  <JFXComboBox fx:id="comboTypCont" focusColor="#053968" prefHeight="25.0" prefWidth="140.0" promptText="Type*" />
+               </children>
+            </VBox>
+            <Pane layoutX="245.0" layoutY="243.0" prefHeight="54.0" prefWidth="158.0">
+               <children>
+                  <HBox alignment="CENTER_RIGHT" layoutX="3.0" layoutY="-4.0" prefHeight="54.0" prefWidth="127.0" spacing="20.0">
+                     <children>
+                        <JFXButton fx:id="okCont" onAction="#OkCont" style="-fx-background-color: #053968;" text="Ok" textFill="WHITE" />
+                        <JFXButton fx:id="cancelCont" layoutX="10.0" layoutY="10.0" onAction="#AnulerCont" style="-fx-background-color: #053968;" text="Annuler" textFill="WHITE" />
+                     </children>
+                  </HBox>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

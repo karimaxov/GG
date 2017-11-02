@@ -1,0 +1,94 @@
+
+#gest_user_button{
+-fx-background-color:  #3684cc;
+}
+#gest_user_button:hover{
+-fx-background-color: #ff4138;
+}
+
+
+#gest_dossier_button{
+-fx-background-color:  #3684cc;
+}
+#gest_dossier_button:hover{
+-fx-background-color: #ff4138;
+}
+
+
+#gest_client_button{
+-fx-background-color:  #3684cc;
+}
+#gest_client_button:hover{
+-fx-background-color: #ff4138;
+}
+
+
+#gest_chauf_button{
+-fx-background-color:  #3684cc;
+}
+#gest_chauf_button:hover{
+-fx-background-color: #ff4138;
+}
+
+
+#stat_button{
+-fx-background-color:  #3684cc;
+}
+#stat_button:hover{
+-fx-background-color: #ff4138;
+}
+
+
+#decon_button{
+-fx-background-color:  #3684cc;
+}
+#decon_button:hover{
+-fx-background-color: #ff4138;
+}
+
+
+#menu_vbox{
+-fx-background-color:  #053968;
+-fx-background-radius: 40 40 40 40;
+}
+
+
+#AnchorPane{
+-fx-background-image:url("../icons/bg.jpg");
+}
+
+#menuTitle{
+-fx-background-color:#053968 ;
+-fx-background-radius: 40 40 0 0;
+-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8),20,0,0,0);
+}
+
+.icon{
+-fx-background-size: 60 60;
+-fx-background-position: center center;
+-fx-background-repeat: stretch;
+}
+
+#gest_user_icon{
+-fx-background-image:url("../icons/key.png");
+}
+
+#gest_dossier_icon{
+-fx-background-image:url("../icons/file.png");
+}
+
+#gest_client_icon{
+-fx-background-image:url("../icons/user.png");
+}
+
+#gest_chauf_icon{
+-fx-background-image:url("../icons/truck.png");
+}
+
+#stat_icon{
+-fx-background-image:url("../icons/bar-chart.png");
+}
+
+#decon_icon{
+-fx-background-image:url("../icons/power-button.png");
+}

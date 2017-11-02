@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_login" default="compile.module.login">
+  <dirname property="module.login.basedir" file="${ant.file.module_login}"/>
+  
+  <property name="module.jdk.home.login" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.login" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.login" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.login" value="-encoding UTF-8 -source 8 -target 8 ${compiler.args}"/>
+  
+  <property name="login.output.dir" value="${module.login.basedir}/out/production/login"/>
+  <property name="login.testoutput.dir" value="${module.login.basedir}/out/test/login"/>
+  
+  <path id="login.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="login.module.production.classpath">
+    <path refid="${module.jdk.classpath.login}"/>
+    <path refid="library.mysql-connector-java-5.1.34-bin.classpath"/>
+    <path refid="library.jfoenix.classpath"/>
+    <path refid="library.controlsfx-8.40.12.classpath"/>
+    <path refid="library.commons-lang3-3.classpath"/>
+    <path refid="library.commons-lang3-3.5-javadoc.classpath"/>
+    <path refid="library.poi-31.classpath"/>
+    <path refid="library.poi-3.15.classpath"/>
+  </path>
+  
+  <path id="login.runtime.production.module.classpath">
+    <pathelement location="${login.output.dir}"/>
+    <path refid="library.mysql-connector-java-5.1.34-bin.classpath"/>
+    <path refid="library.jfoenix.classpath"/>
+    <path refid="library.controlsfx-8.40.12.classpath"/>
+    <path refid="library.commons-lang3-3.classpath"/>
+    <path refid="library.commons-lang3-3.5-javadoc.classpath"/>
+    <path refid="library.poi-31.classpath"/>
+    <path refid="library.poi-3.15.classpath"/>
+  </path>
+  
+  <path id="login.module.classpath">
+    <path refid="${module.jdk.classpath.login}"/>
+    <pathelement location="${login.output.dir}"/>
+    <path refid="library.mysql-connector-java-5.1.34-bin.classpath"/>
+    <path refid="library.jfoenix.classpath"/>
+    <path refid="library.controlsfx-8.40.12.classpath"/>
+    <path refid="library.commons-lang3-3.classpath"/>
+    <path refid="library.commons-lang3-3.5-javadoc.classpath"/>
+    <path refid="library.poi-31.classpath"/>
+    <path refid="library.poi-3.15.classpath"/>
+  </path>
+  
+  <path id="login.runtime.module.classpath">
+    <pathelement location="${login.testoutput.dir}"/>
+    <pathelement location="${login.output.dir}"/>
+    <path refid="library.mysql-connector-java-5.1.34-bin.classpath"/>
+    <path refid="library.jfoenix.classpath"/>
+    <path refid="library.controlsfx-8.40.12.classpath"/>
+    <path refid="library.commons-lang3-3.classpath"/>
+    <path refid="library.commons-lang3-3.5-javadoc.classpath"/>
+    <path refid="library.poi-31.classpath"/>
+    <path refid="library.poi-3.15.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.login">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.login">
+    <patternset refid="excluded.from.module.login"/>
+  </patternset>
+  
+  <path id="login.module.sourcepath">
+    <dirset dir="${module.login.basedir}">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.login" depends="compile.module.login.production,compile.module.login.tests" description="Compile module login"/>
+  
+  <target name="compile.module.login.production" depends="register.custom.compilers" description="Compile module login; production classes">
+    <mkdir dir="${login.output.dir}"/>
+    <javac2 destdir="${login.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.login}/javac">
+      <compilerarg line="${compiler.args.login}"/>
+      <bootclasspath refid="login.module.bootclasspath"/>
+      <classpath refid="login.module.production.classpath"/>
+      <src refid="login.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.login"/>
+    </javac2>
+    
+    <copy todir="${login.output.dir}">
+      <fileset dir="${module.login.basedir}/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.login.tests" depends="register.custom.compilers,compile.module.login.production" description="compile module login; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.login" description="cleanup module">
+    <delete dir="${login.output.dir}"/>
+    <delete dir="${login.testoutput.dir}"/>
+  </target>
+</project>

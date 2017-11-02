@@ -1,0 +1,6 @@
+#ButtonMC,#ButtonRM,#ButtonRA,#ButtonOD{
+-fx-background-color: #053968;
+}
+#ButtonMC:hover,#ButtonRM:hover,#ButtonRA:hover,#ButtonOD:hover{
+-fx-background-color: #ff9c23;
+}

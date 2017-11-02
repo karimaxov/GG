@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="142.0" prefWidth="229.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.InterfaceFactureController">
+    <children>
+    <ButtonBar layoutX="74.0" layoutY="211.0" prefHeight="40.0" prefWidth="200.0" />
+      <JFXCheckBox fx:id="checkVisualize" checkedColor="#053968" layoutX="21.0" layoutY="38.0" onAction="#action1" text="Visualiser" unCheckedColor="#053968" />
+      <JFXCheckBox fx:id="checkPrint" checkedColor="#053968" layoutX="117.0" layoutY="38.0" text="Imprimer" unCheckedColor="#053968" />
+      <JFXButton fx:id="facturer" layoutX="38.0" layoutY="85.0" onAction="#facturer" ripplerFill="#3678b2" style="-fx-background-color: #053968;" text="Facturer" textFill="#deffe8">
+         <font>
+            <Font name="Arial Unicode MS" size="14.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="125.0" layoutY="85.0" onAction="#Annuler" style="-fx-background-color: #053968;" text="Annuler" textFill="#deffe8">
+         <font>
+            <Font name="Arial Unicode MS" size="14.0" />
+         </font>
+      </JFXButton>
+    </children>
+</AnchorPane>

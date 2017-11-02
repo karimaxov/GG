@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="440.0" prefWidth="800.0" stylesheets="@styleSheet.css" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+    <children>
+        <Pane id="coverPane" layoutX="198.0" prefHeight="455.0" prefWidth="405.0" stylesheets="@styleSheet.css" />
+        <Pane layoutX="131.0" layoutY="3.0" prefHeight="434.0" prefWidth="539.0">
+            <children>
+                <VBox id="Vbox" layoutX="136.0" layoutY="105.0" prefHeight="300.0" prefWidth="286.0">
+                    <children>
+                        <Pane id="headBarPane" prefHeight="67.0" prefWidth="286.0" stylesheets="@styleSheet.css">
+                            <children>
+                                <Text fill="WHITE" layoutX="37.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Authentification" textAlignment="CENTER">
+                                    <font>
+                                        <Font name="Microsoft Sans Serif" size="31.0" />
+                                    </font>
+                                </Text>
+                            </children>
+                        </Pane>
+                        <Pane id="loginPane" prefHeight="264.0" prefWidth="286.0" stylesheets="@styleSheet.css">
+                            <children>
+                                <VBox prefHeight="249.0" prefWidth="286.0">
+                                    <children>
+                                        <HBox alignment="CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="48.0" prefWidth="286.0">
+                                            <children>
+                                                <Pane id="userIc" prefHeight="31.0" prefWidth="31.0" stylesheets="@styleSheet.css">
+                                                    <HBox.margin>
+                                                        <Insets bottom="10.0" right="10.0" top="10.0" />
+                                                    </HBox.margin>
+                                                </Pane>
+                                                <JFXTextField fx:id="usernameField" alignment="CENTER" focusColor="#3678b2" labelFloat="true" prefHeight="24.0" prefWidth="165.0" promptText="nom d' utilisateur" unFocusColor="#053968">
+                                                    <HBox.margin>
+                                                        <Insets bottom="15.0" left="10.0" top="15.0" />
+                                                    </HBox.margin>
+                                                    <font>
+                                                        <Font name="Microsoft Sans Serif" size="14.0" />
+                                                    </font>
+                                                </JFXTextField>
+                                            </children>
+                                            <VBox.margin>
+                                                <Insets top="15.0" />
+                                            </VBox.margin>
+                                        </HBox>
+                                        <HBox alignment="CENTER" layoutX="10.0" layoutY="25.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="48.0" prefWidth="286.0">
+                                            <children>
+                                                <Pane id="lockIc" prefHeight="31.0" prefWidth="31.0" stylesheets="@styleSheet.css">
+                                                    <HBox.margin>
+                                                        <Insets bottom="10.0" right="10.0" top="10.0" />
+                                                    </HBox.margin>
+                                                </Pane>
+                                    <StackPane fx:id="stack" prefHeight="48.0" prefWidth="168.0">
+                                       <children>
+                                          <JFXTextField fx:id="passwordFieldShown" alignment="CENTER" focusColor="#3678b2" labelFloat="true" prefHeight="24.0" prefWidth="165.0" promptText=" mot de passe" unFocusColor="#053968">
+                                             <font>
+                                                <Font name="Microsoft Sans Serif" size="14.0" />
+                                             </font>
+                                          </JFXTextField>
+                                                      <JFXPasswordField fx:id="passwordField" alignment="CENTER" focusColor="#2c71ae" labelFloat="true" prefHeight="24.0" prefWidth="165.0" promptText="mot de passe" unFocusColor="#053968">
+                                                          <font>
+                                                              <Font name="Microsoft Sans Serif" size="14.0" />
+                                                          </font>
+                                                          <padding>
+                                                              <Insets top="20.0" />
+                                                          </padding>
+                                                      </JFXPasswordField>
+                                       </children>
+                                    </StackPane>
+                                            </children>
+                                            <VBox.margin>
+                                                <Insets top="5.0" />
+                                            </VBox.margin>
+                                        </HBox>
+                                        <HBox alignment="CENTER" prefHeight="33.0" prefWidth="286.0">
+                                            <children>
+                                                <JFXCheckBox fx:id="checkpassword" checkedColor="#296ca7" mnemonicParsing="false" onAction="#checkPassword" text="Afficher le mot de passe" unCheckedColor="#053968" />
+                                            </children>
+                                        </HBox>
+                                        <HBox alignment="CENTER" prefHeight="19.0" prefWidth="286.0">
+                                            <children>
+                                                <Label fx:id="echecLabal" textFill="#fc0000">
+                                                    <font>
+                                                        <Font size="10.0" />
+                                                    </font>
+                                                </Label>
+                                            </children>
+                                        </HBox>
+                                        <HBox alignment="CENTER" layoutX="10.0" layoutY="79.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="48.0" prefWidth="286.0">
+                                            <children>
+                                                <JFXButton id="connectionButton" fx:id="connectionButton" alignment="CENTER" contentDisplay="CENTER" onAction="#verifyIdentity" prefHeight="38.0" prefWidth="117.0" ripplerFill="#c2ffd7" stylesheets="@styleSheet.css" text="Se connecter" textAlignment="CENTER" textFill="#edfff3">
+                                                    <font>
+                                                        <Font name="Microsoft Sans Serif" size="16.0" />
+                                                    </font>
+                                                    <cursor>
+                                                        <Cursor fx:constant="HAND" />
+                                                    </cursor></JFXButton>
+                                            </children>
+                                            <VBox.margin>
+                                                <Insets top="10.0" />
+                                            </VBox.margin>
+                                        </HBox>
+                                    </children>
+                                </VBox>
+                            </children>
+                        </Pane>
+                    </children>
+                </VBox>
+            </children>
+        </Pane>
+        <JFXTabPane />
+    </children>
+</Pane>

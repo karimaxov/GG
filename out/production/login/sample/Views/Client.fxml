@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXTreeTableView?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TreeTableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="680.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.ClientController">
+   <children>
+      <SplitPane dividerPositions="0.4331103678929766" layoutX="165.0" layoutY="145.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="250.0" prefWidth="150.0" style="-fx-background-color: #ffffff;">
+               <children>
+                  <Pane layoutX="32.0" layoutY="47.0" prefHeight="37.0" prefWidth="249.0" style="-fx-background-color: #053968; -fx-border-radius: 70 70 0 0; -fx-background-radius: 70 70 0 0;">
+                     <children>
+                        <Pane layoutX="-1.0" layoutY="37.0" prefHeight="274.0" prefWidth="249.0" style="-fx-border-radius: 0 0 70 70; -fx-background-radius: 0 0 70 70; -fx-background-color: #f9f9f9;">
+                           <children>
+                              <GridPane layoutX="34.0" layoutY="13.0" prefHeight="237.0" prefWidth="183.0" vgap="20.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="176.0" minWidth="10.0" prefWidth="150.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <children>
+                                    <JFXTextField fx:id="text1" alignment="CENTER" labelFloat="true" promptText="Nom: *" />
+                                    <JFXTextField fx:id="text2" alignment="CENTER" labelFloat="true" layoutX="104.0" layoutY="13.0" promptText="Email: *" GridPane.rowIndex="1" />
+                                    <JFXTextField fx:id="text4" alignment="CENTER" labelFloat="true" layoutX="104.0" layoutY="43.0" promptText="Telephone: *" GridPane.rowIndex="3" />
+                                    <JFXTextField fx:id="text5" alignment="CENTER" labelFloat="true" layoutX="10.0" layoutY="13.0" promptText="Faxe" GridPane.rowIndex="4" />
+                                    <JFXTextField fx:id="text6" alignment="CENTER" labelFloat="true" layoutX="10.0" layoutY="13.0" promptText="Fixe" GridPane.rowIndex="5" />
+                                    <JFXTextField fx:id="text3" alignment="CENTER" labelFloat="true" layoutX="10.0" layoutY="13.0" promptText="Adresse: *" GridPane.rowIndex="2" />
+                                    <JFXTextField fx:id="text7" alignment="CENTER" labelFloat="true" layoutX="104.0" layoutY="163.0" promptText="type: *" GridPane.rowIndex="6" />
+                                 </children>
+                              </GridPane>
+                           </children>
+                        </Pane>
+                        <Pane layoutX="64.0" layoutY="14.0" style="-fx-background-color: 265896;">
+                           <children>
+                              <Text fill="WHITE" layoutY="9.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gestion de Client" />
+                           </children>
+                        </Pane>
+                     </children>
+                  </Pane>
+                  <JFXButton fx:id="ajouter" layoutX="14.0" layoutY="355.0" onMouseClicked="#ajouter" prefHeight="37.0" prefWidth="80.0" style="-fx-background-color: #053968;" text="Ajouter" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="modifier" layoutX="105.0" layoutY="355.0" onMouseClicked="#modifier1" prefHeight="37.0" prefWidth="74.0" style="-fx-background-color: #053968;" text="Modifier" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="supprimer" layoutX="191.0" layoutY="355.0" onMouseClicked="#delete" prefHeight="37.0" prefWidth="80.0" style="-fx-background-color: #053968;" text="Supprimer" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></JFXButton>
+                  <Hyperlink layoutX="94.0" layoutY="407.0" onMouseClicked="#vider" text="clearAll" />
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <JFXTreeTableView fx:id="treeView" layoutX="44.0" layoutY="-61.0" onMouseClicked="#modifier" prefHeight="398.0" prefWidth="336.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <columnResizePolicy>
+                        <TreeTableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy></JFXTreeTableView>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+      <StackPane prefHeight="56.0" prefWidth="49.0">
+         <children>
+            <ImageView fitHeight="39.0" fitWidth="43.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../res/back.png" />
+               </image>
+            </ImageView>
+            <JFXButton onMouseClicked="#retour" opacity="0.0" prefHeight="45.0" prefWidth="37.0" textFill="WHITE">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </StackPane>
+   </children>
+</AnchorPane>

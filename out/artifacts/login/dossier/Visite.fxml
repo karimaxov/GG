@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXTreeTableView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="610.0" spacing="10.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dossier.VisiteController">
+   <children>
+      <JFXTreeTableView fx:id="selectedContTable" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="300.0" prefWidth="550.0">
+         <VBox.margin>
+            <Insets top="15.0" />
+         </VBox.margin>
+      </JFXTreeTableView>
+      <HBox alignment="TOP_CENTER" prefHeight="56.0" prefWidth="610.0" spacing="30.0">
+         <children>
+            <JFXComboBox fx:id="comboNomDouanier" focusColor="#053968" prefHeight="25.0" prefWidth="200.0" promptText="Nom douanier" />
+            <JFXComboBox fx:id="comboBadge" focusColor="#053968" prefHeight="25.0" prefWidth="108.0" promptText="Badge douanier" />
+            <Pane id="addCli_" prefHeight="7.0" prefWidth="24.0" stylesheets="@Dossier_Style.css">
+               <children>
+                  <JFXButton layoutY="-1.0" onAction="#AddClient" prefHeight="34.0" prefWidth="26.0" stylesheets="@Dossier_Style.css" text=" " />
+               </children>
+            </Pane>
+         </children>
+      </HBox>
+      <HBox alignment="TOP_CENTER" layoutX="10.0" layoutY="335.0" prefHeight="56.0" prefWidth="610.0" spacing="30.0">
+         <children>
+            <JFXTextField fx:id="placeInput" focusColor="#0a68bf" labelFloat="true" prefHeight="25.0" prefWidth="208.0" promptText="Lieu" unFocusColor="#053869">
+               <HBox.margin>
+                  <Insets top="5.0" />
+               </HBox.margin>
+            </JFXTextField>
+         </children>
+      </HBox>
+      <HBox alignment="TOP_CENTER" prefHeight="51.0" prefWidth="610.0" spacing="20.0">
+         <children>
+            <JFXCheckBox fx:id="checkVisualize" checkedColor="#053869" text="visualiser" />
+            <JFXCheckBox fx:id="checkPrint" checkedColor="#053869" layoutX="272.0" layoutY="10.0" text="imprimer" />
+         </children>
+         <padding>
+            <Insets top="10.0" />
+         </padding>
+      </HBox>
+      <HBox alignment="TOP_CENTER" layoutX="10.0" layoutY="425.0" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+         <children>
+            <JFXButton fx:id="btnVisite11" layoutX="253.0" layoutY="10.0" onAction="#genererVisite" prefHeight="34.0" prefWidth="110.0" ripplerFill="#3678b2" style="-fx-background-color: #053968;" text="Bon de visite" textFill="#deffe8">
+               <font>
+                  <Font name="Arial Unicode MS" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton fx:id="abortButton" layoutX="260.0" layoutY="10.0" onAction="#Annuler" prefHeight="34.0" prefWidth="110.0" ripplerFill="#3678b2" style="-fx-background-color: #053968;" text="Annuler" textFill="#f2fcf5">
+               <font>
+                  <Font name="Arial Unicode MS" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+         </children>
+         <VBox.margin>
+            <Insets top="10.0" />
+         </VBox.margin>
+      </HBox>
+   </children>
+</VBox>

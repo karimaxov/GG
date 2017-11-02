@@ -1,0 +1,6 @@
+
+-------
+29/56/2017 00:56:02
+-------
+
+Error executing 'drop database projets2 if exists ' (line 25): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'if exists' at line 1

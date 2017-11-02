@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="567.0" prefWidth="502.0" spacing="20.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.dbErrorController">
+   <children>
+      <Pane id="errorDataBaseIcon" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="98.0" prefWidth="113.0" stylesheets="@../Styles/styleSheet.css" />
+            <Text fill="#d01a1a" strokeType="OUTSIDE" strokeWidth="0.0" text="Erreur de connection avec la base de donnée ! " textAlignment="CENTER" wrappingWidth="403.13671875">
+         <font>
+            <Font name="Microsoft Sans Serif" size="19.0" />
+         </font>
+      </Text>
+      <Text layoutX="17.0" layoutY="184.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1-   Verifier votre reseau local." wrappingWidth="400.13671875">
+         <font>
+            <Font name="Microsoft Sans Serif" size="14.0" />
+         </font>
+      </Text>
+      <HBox alignment="CENTER" fillHeight="false" prefHeight="70.0" prefWidth="502.0" spacing="10.0">
+         <children>
+            <JFXCheckBox fx:id="DatabaseExistsCheck1" checkedColor="#053968" onAction="#enableCreatingDatabase" prefHeight="33.0" prefWidth="151.0" text="est ce votre serveur  ?" unCheckedColor="#053968">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </JFXCheckBox>
+            <Line endY="30.0" />
+            <JFXButton id="applyButton" fx:id="createButton1" onAction="#createDatabase" prefHeight="54.0" prefWidth="199.0" ripplerFill="#332b9e" stylesheets="@../Styles/styleSheet.css" text="Creer la base de donnée" textFill="#f8fff4">
+               <font>
+                  <Font name="Microsoft Sans Serif" size="14.0" />
+               </font>
+            </JFXButton>
+         </children>
+         <padding>
+            <Insets top="15.0" />
+         </padding>
+      </HBox>
+      <Text layoutX="17.0" layoutY="147.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2-   Verifier les services du wampserver." wrappingWidth="400.13671875">
+         <font>
+            <Font name="Microsoft Sans Serif" size="14.0" />
+         </font>
+      </Text>
+      <VBox alignment="TOP_CENTER" prefHeight="80.0" prefWidth="449.0" spacing="5.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="3-  Verifier l' adresse IP du serveur :" wrappingWidth="400.13671875">
+               <font>
+                  <Font name="Microsoft Sans Serif" size="14.0" />
+               </font>
+            </Text>
+            <HBox alignment="TOP_CENTER" prefHeight="64.0" prefWidth="449.0" spacing="5.0">
+               <children>
+                  <JFXCheckBox fx:id="ipCheck" checkedColor="#053968" onAction="#ipModification" prefHeight="44.0" prefWidth="111.0" text="modifier ?" unCheckedColor="#053968">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </JFXCheckBox>
+                  <Line endY="30.0">
+                     <HBox.margin>
+                        <Insets right="15.0" />
+                     </HBox.margin>
+                  </Line>
+                  <JFXTextField fx:id="ip1" alignment="CENTER" focusColor="#2875b8" prefHeight="25.0" prefWidth="31.0" promptText="255" text="127" unFocusColor="#053968" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="." wrappingWidth="8.13671875">
+                     <font>
+                        <Font name="Microsoft Sans Serif" size="18.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets top="2.0" />
+                     </HBox.margin>
+                  </Text>
+                  <JFXTextField fx:id="ip2" alignment="CENTER" focusColor="#2875b8" layoutX="212.0" layoutY="10.0" prefHeight="25.0" prefWidth="31.0" promptText="255" text="0" unFocusColor="#053968" />
+                  <Text layoutX="248.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="." wrappingWidth="8.13671875">
+                     <font>
+                        <Font name="Microsoft Sans Serif" size="18.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets top="2.0" />
+                     </HBox.margin>
+                  </Text>
+                  <JFXTextField fx:id="ip3" alignment="CENTER" focusColor="#2875b8" layoutX="230.0" layoutY="10.0" prefHeight="25.0" prefWidth="31.0" promptText="255" text="0" unFocusColor="#053968" />
+                  <Text layoutX="273.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="." wrappingWidth="8.13671875">
+                     <font>
+                        <Font name="Microsoft Sans Serif" size="18.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets top="2.0" />
+                     </HBox.margin>
+                  </Text>
+                  <JFXTextField fx:id="ip4" alignment="CENTER" focusColor="#2875b8" layoutX="262.0" layoutY="10.0" prefHeight="25.0" prefWidth="31.0" promptText="255" text="1" unFocusColor="#053968" />
+               </children>
+            </HBox>
+            <Text fx:id="invalidInputText" fill="#d33e3e" layoutX="61.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="400.13671875">
+               <font>
+                  <Font name="Microsoft Sans Serif" size="14.0" />
+               </font>
+            </Text>
+            <Text layoutX="61.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="4- Verifier les paramètres de votre compte de base de donnée:" wrappingWidth="400.13671875">
+               <font>
+                  <Font name="Microsoft Sans Serif" size="14.0" />
+               </font>
+            </Text>
+            <HBox alignment="CENTER" prefHeight="72.0" prefWidth="502.0" spacing="10.0">
+               <children>
+                  <JFXCheckBox fx:id="userInformationsCheck" checkedColor="#053968" onAction="#userModification" prefHeight="44.0" prefWidth="98.0" text="modifier ?" unCheckedColor="#053968">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </JFXCheckBox>
+                  <Line layoutY="-100.0" startY="100.0">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </Line>
+                  <VBox alignment="CENTER" prefHeight="50.0" prefWidth="181.0" spacing="25.0">
+                     <children>
+                        <JFXTextField fx:id="usernameInput" focusColor="#2875b8" labelFloat="true" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="200.0" promptText="nom d'utilisateur" unFocusColor="#053968" />
+                        <JFXPasswordField fx:id="passwordInput" focusColor="#2875b8" labelFloat="true" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="200.0" promptText="Mot de passe" unFocusColor="#053968" />
+                     </children>
+                     <padding>
+                        <Insets bottom="5.0" top="5.0" />
+                     </padding>
+                  </VBox>
+               </children>
+               <padding>
+                  <Insets top="15.0" />
+               </padding>
+            </HBox>
+         </children>
+      </VBox>
+      <HBox alignment="CENTER_RIGHT" prefHeight="66.0" prefWidth="502.0" spacing="20.0">
+         <children>
+            <JFXButton id="applyButton" fx:id="applyButton" onAction="#apply" prefHeight="27.0" prefWidth="108.0" ripplerFill="#4a85b9" stylesheets="@../Styles/styleSheet.css" text="Appliquer" textFill="#e0eede">
+               <font>
+                  <Font name="Microsoft Sans Serif" size="18.0" />
+               </font></JFXButton>
+            <JFXButton fx:id="cancelButton" layoutX="353.0" layoutY="24.0" onAction="#cancel" prefHeight="35.0" prefWidth="89.0" ripplerFill="#4a85b9" stylesheets="@../Styles/styleSheet.css" text="Annuler" textFill="#f8fff4">
+               <font>
+                  <Font name="Microsoft Sans Serif" size="18.0" />
+               </font>
+            </JFXButton>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <padding>
+            <Insets right="30.0" />
+         </padding>
+      </HBox>
+   </children>
+   <padding>
+      <Insets top="10.0" />
+   </padding>
+</VBox>
